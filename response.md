@@ -1,46 +1,87 @@
-That's quite a comprehensive list you have there! All of these are integral to computational linguistics and natural language processing (NLP). Let's dive in.
+Given the range of topics, there will be quite a lot to cover here. I'll try to summarize the key points, but this is really a broad overview so you may need to dive into specific areas in more depth. 
 
-1. **Finite State Text Processing, Morphology, Pynini** - Finite State Text Processing is using Finite State Automata (FSA) to process text. Morphology is the study of words, how they are formed and their relationship to other words. Pynini is a library that employs weighted finite-state transducer technology, thus enabling text transformation like normalization and casing adjustment.
+1. Finite State Text Processing involves the use of systems that process input strings based on a set of defined states and transitions. It is often applied in Natural Language Processing (NLP) for things like text normalization and spell checking. 
 
-2. **Text normalization & Spelling** - Text normalization involves transforming text into a more uniform format, which is essential for data preprocessing in NLP tasks. Spelling correction is a crucial subset of this and involves correcting spelling errors within the text.
+2. Morphology in linguistics is the study of words, their internal structure, and how they are formed. For example, 'jumping' is formed from 'jump' and 'ing'. 
 
-3. **FSA, Reg Expressions, Conditional Prob., Bayes** - FSA is a mathematical model of computation, used for designing computer-based systems. Regular Expressions are sequences of characters that define a search pattern in text processing. Conditional probability is the probability of an event given another event has occurred; it’s fundamental to the working of Naïve Bayes Classifier.
+3. Pynini is a Python library that compiles finite-state grammars written in a regular-expression-like syntax. 
 
-4. **Language Models: Traditional vs Neural** - Traditional language models like n-grams predict the probability distribution of a sequence of words based on statistical methods. But neural language models like Recurrent Neural Networks (RNN), Long Short Term Memory (LSTM) use deep learning to predict word sequences, capturing semantic relationships better.
+4. FSA (Finite State Automata) and Regular Expressions are both used to recognize patterns in strings. These can be used in text normalization or spell-checking.
 
-5. **Text Classification - Traditional Methods (Naive Bayes and Logistic Regression)** - Text classification involves classifying text into predefined categories. Naive Bayes uses the principles of Bayes theorem with an assumption of independence between features, while Logistic Regression calculates the probability of a certain class-assignment.
+5. Conditional Probability and Bayes' theorem, are the backbone of probabilistic model verification in NLP, such as in spam filtering or document classification.
 
-6. **Text Classification - Neural Methods (MLP and CNN)** – Multilayer perceptrons (MLP) are feedforward neural networks used for classification. Convolutional Neural Networks (CNN) are another type of deep learning model particularly useful for classifying images but can also be used for text data.
+6. Text Normalization is the process of transforming text into a canonical (standard) form. For example, converting numbers into words like '9' to 'nine'.
 
-7. **Sequence labeling: Markov Models - POS tagging and NER, RNNs, LSTMs** - Sequence labeling involves assigning a categorical label to each member of the sequence of observed values. Markov Models, RNNs, and LSTM models, are all commonly used for this task. Part of Speech (POS) tagging and Named Entity Recognition (NER) are instances of sequence labeling.
+7. Language Models predict the next word in a sequence given the history of previous words. They can be Traditional (based on n-grams, smoothed or back-off models) or Neural (machine learning-based models capable of learning word dependencies).
 
-8. **Sequence-to-Sequence: Encoder-Decoder, Attention** - Seq2seq models with encoder-decoder framework are used in NLP tasks like machine translation, text summarization. Attention mechanisms help the model to focus on different parts of the input when producing the output.
+8. Text Classification is the task of assigning predefined categories to a text. This can be done traditionally with methods like Naive Bayes and Logistic Regression, or more advanced methods like Feedforward Neural Networks, Multi-Layer Perceptron (MLP), and Convolutional Neural Networks (CNN).
 
-9. **Transformers and Text Classification (BOW, CBOW, transformers)** - Transformers are a type of deep learning model which handle long-term dependencies well. For text classification, Bag of Words (BOW), Continuous Bag of Words (CBOW) and transformer models like BERT can be used.
+9. Sequence Labeling is the task of predicting labels for each member of a sequence. Markov Models and Hidden Markov Models are often used for this. POS tagging and NER (Named Entity Recognition) are some applications.
 
-10. **Pre-trained language models** - These are language modeling models that were trained on a large corpus and can be fine-tuned on a specific task, reducing the need for a larger dataset.
+10. Sequence-to-sequence models are deep learning models where both input and output are sequences. "Encoder-Decoder" and "Attention" models are examples of such models used for tasks like Machine Translation.
 
-11. **Intro to Syntax, Context Free Grammars and Parsing** - Syntax is the set of rules in a language that affects the order of words and phrases. Context-Free Grammars (CFG) are used to describe the syntax of programming languages. Parsing is the process of analyzing a string of symbols conforming to the rules of a formal grammar.
+11. Transformers are a specific type of model used in NLP notable for their self-attention mechanism which lets them consider different words in a sentence to establish context. 
 
-12. **Chunking, Dependency Parsing, Treebanks** - Chunking is a process of extracting phrases from unstructured text, Dependency Parsing analyzes the grammatical structure of a sentence, establishing relationships between 'head' words and words that modify those heads. Treebank is a database of sentences annotated with syntactic or semantic structures.
+12. Pretrained language models like BERT, GPT, or ELMo are general-purpose models trained over a large amount of unlabelled text data (like the entire internet). 
 
-And so on. The fields of lexical semantics, topic modeling, sequence modeling and others each offer tools and techniques to deal with nuanced aspects of textual data. 
+13. Syntax, Context-Free Grammars, Parsing, Chunking, Treebanks, Sequence Modeling are all concerned with understanding the structure of language.
 
-Most of these topics can be applied in various scenarios such as text classification, sentiment analysis, machine translation, speech recognition, information extraction, question-answering and more.
+14. Semantics is the study of meaning. This can be broken down into lexical semantics (the meaning of individual words) and compositional semantics (how meanings combine).
 
-### Quiz #0:
-Sure, let's formulate a few questions on morphology:
+15. Semantic Role Labeling is a task in NLP which involves detecting the semantic relationships between entities in a sentence.
 
-1. **What is morphology in the context of computational linguistics, and why is it important in natural language processing?**
+16. Topic Modeling is a type of statistical model for discovering abstract topics that occur in a collection of documents.
 
-   Answer: Morphology is a field within linguistics that studies the structure of words. In computational linguistics, this involves understanding how words are formed by analyzing their root forms (stems), prefixes, suffixes, and inflectional markers. This is important in natural language processing because it allows machines to understand and categorize words based on their significant parts, enhancing their capability to comprehend, process, and generate human language efficiently. For example, by understanding the root word "happy" and the suffix "-ness", a machine can understand that "happiness" refers to the state of being happy.
+17. Word embeddings translate words into vectors of real numbers so that the word's meaning can be understood by the machine. 
 
-2. **Can you explain the difference between inflectional and derivational morphology? Provide an example of each.**
+18. Discourse and Coreference are about understanding the larger context of a conversation or a paragraph, and how different parts refer to each other.
 
-   Answer: Inflectional and derivational morphologies are two key sub-fields within morphology. Inflectional morphology deals with inflections that do not change a word's grammatical category (part of speech) nor create a new word but instead provide grammatical information such as tense or number. For example, adding "-s" to a verb to indicate the present tense third-person singular (as in "walks").
+19. Summarization is the task of making a shorter version of a document while keeping the main points. 
 
-   On the other hand, derivational morphology involves the addition of affixes (prefixes, infixes, suffixes) to a root or stem word to create a new word, often changing the word's grammatical category. For example, adding "-ness" to the adjective "happy" forms the noun "happiness".
+These concepts are all integral parts of NLP and computational linguistics, and they interact in many ways. They're used in various applications like machine translation, question answering systems, document or sentiment classification, information extraction and so forth.
 
-3.  **How does a sound understanding of morphology contribute to developing more accurate and efficient machine translation systems?**
+### Test #1:
+Sure, here are the questions:
 
-   Answer: Morphology, being the study of word formation, allows machine translation systems to understand the structure of words, their origins, and how they can change, which is crucial when translating from one language to another. This is particularly relevant for languages with rich morphological structures where words can take on many forms. Recognizing the root word and various affixes can greatly improve the accuracy of translation. For instance, distinguishing between the singular form of a noun and its plural form can impact the overall meaning of a sentence, hence it’s important to translate them accurately. Thus, incorporating morphology can make machine translation systems more sophisticated and accurate, thereby enhancing their performance.
+1. A sentence reads "The dog chase the cat". Correct the sentence using Finite State Automata approach and explain how you did it.
+
+2. Consider the word "unhappiness". Break it down into its morpheme components and explain the role of each morpheme.
+
+3. You are working with the Pynini library and are tasked to build a finite state grammar to recognize email addresses. Explain your approach on doing this.
+
+4. The probability of receiving a spam email is 30% and the probability of a spam email containing the word "prize" is 80%. If an email arrives with the word "prize", what is the conditional probability that this email is spam? Use the Bayes theorem.
+
+5. Given the sentence "it is rainng outside", you are tasked to normalize the text. Explain the steps and the final normalized text you'd get.
+
+6. You’re training a trigram language model and your corpus includes the sentence: “A beautiful, breezy day”. What would the sequences look like under the context of your model? 
+
+7. Your task is to classify tweets into either "positive", "negative", or "neutral". You have chosen to use a Feedforward Neural Network. Explain the features you would use and why.
+
+8. Given the sentence "I am a student from XYZ University", identify the entities in the sentence and label them using Named Entity Recognition.
+
+9. Explain an instance where an "Encoder-Decoder" model in Sequence-to-Sequence models would be more effective than a "Attention" model and why.
+
+10. You’re using the Transformer model for English to French translation. The sentence is “I am going to the market”. Explain the role played by self-attention in accurately translating this sentence.
+
+### Question - Next time, include solutions:
+Of course, I apologize for that. Here are the solutions to the questions:
+
+1. Using Finite State Automata, we consider the dictionary of known words and grammatical rules. As 'chase' is incorrect grammatically in this sentence, the model corrects it to 'chased' to form "The dog chased the cat".
+
+2. "Unhappiness" can be broken down into three morphemes: the prefix "un-", the root "happy", and the suffix "-ness". "Un-" is a morpheme that adds the meaning of negation, "happy" is the root word implying a feeling of joy, and "-ness" transforms an adjective into a noun, indicating a state or condition.
+
+3. Building a finite-state grammar to recognize email addresses with Pynini would involve defining the structure of a typical email address (one or more alphanumeric characters, followed by "@", followed by one or more alphanumeric characters, then a period, then a domain).
+
+4. Using Bayes' theorem, the conditional probability of an email being spam given it contains the word "prize" is: P(Spam | Prize) = [P(Prize | Spam) * P(Spam)] / P(Prize) = [0.80*0.30] / P(Prize) = 0.24 / P(Prize). You would need the probability of any email containing the word "prize" to get the exact answer.
+
+5. Normalizing "it is rainng outside" would first involve correcting spelling to "it is raining outside". Further normalization might involve lowercasing (already done here) or removing punctuation (not applicable here). 
+
+6. In a trigram model, given the sentence “A beautiful, breezy day”, the sequences would be: [“<s>”, “a”, “beautiful”], [“a”, “beautiful”, “breezy”], [“beautiful”, “breezy”, “day”], [“breezy”, “day”, “</s>”], where "<s>" and "</s>" are special tokens indicating the start and end of the sentence.
+
+7. For classifying tweets, features to use with a Feedforward Neural Network include word frequency counts, presence or absence of certain words, length of tweet, the sentiment score of the tweet (which can be calculated using a sentiment lexicon), and the use of hashtags, mentions, and emoticons.
+
+8. "I" would be the entity indicating the person making the statement, so it would be labeled as "PERSON". "XYZ University" would be labeled as "ORGANIZATION", as it's named entity representing an institution.
+
+9. An instance where an "Encoder-Decoder" model would be more effective than an "Attention" model is when translating a language with high word alignment like French to English. This is because the "Encoder-Decoder" model already has a good performance with high word alignment. However, for languages with lower word alignment, the "Attention" model would fare better as it allows the model to focus on specific parts of the input sequence.
+
+10. With the Transformer model, the sentence “I am going to the market” would be processed in parallel. The self-attention mechanism would create a weighted representation of each word in relation to all other words in the sentence, to capture the dependencies among the words, which helps produce a more accurate translation.

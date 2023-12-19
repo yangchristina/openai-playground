@@ -223,7 +223,7 @@ const quizOneTopic = async (openai: OpenAIChatApi, history: ChatRequestMessage[]
 }
 
 const testAll = async (openai: OpenAIChatApi, history: ChatRequestMessage[]) => {
-    const prompt = "Write me a 10 question test on the material. The test should make me apply my knowledge to scenarios. Here are some example questions:\n"
+    const prompt = "Write me a 10 question test on the material. The test should make me apply my knowledge to scenarios. Include solutions. Here are some example questions:\n"
     return await handleQuestion(openai, history, prompt + EXAMPLE_QUESTIONS.join('\n\n'))
 }
 

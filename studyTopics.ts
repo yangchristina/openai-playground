@@ -3,6 +3,7 @@ import 'dotenv/config'
 import { writeFileSync } from 'fs';
 import { input, select } from '@inquirer/prompts';
 
+const textbook = "https://web.stanford.edu/~jurafsky/slp3/"
 const SYSTEM_MESSAGE = "I am a student who is trying to study for my final exam. You are my tutor, and I will ask you questions about the topics I am studying. I will also ask you to give me a brief overview of the topics I am studying and how the topics I am studying can be applied to different scenarios. The topics I am studying are: "
 const EXAMPLE_TOPICS = [
     `Finite State Text Processing, Morphology, Pynini
@@ -92,6 +93,9 @@ const EXAMPLE_QUESTIONS = [
     the most likely k words, then renormalizes it and samples a word from the pruned
     distribution proportionally to its probability. It yields higher quality and moderately diverse
     sentences (depending on the value of k).`,
+    `Question: What is the advantage of bidirectional RNNs over unidirectional RNNs? Describe how the hidden states are computed using a bidirectional RNN.`,
+    `Question: In decoding, let V be the size of vocabulary, and M be the maximum output length. What are the respective time and space complexity of beam search (beam size equals to K) and exhaustive search (i.e. exploring all sequences)?`,
+    `Question: During beam search with beam size=K, what happens when an “end-of-sequence” token is generated and the corresponding sequence belongs to the K best hypothesis? Why?`,
 ]
 
 const init = async () => {
@@ -140,11 +144,6 @@ const init = async () => {
                     value: 'test',
                 },
                 {
-                    name: 'write',
-                    value: 'write',
-                    description: 'write to file',
-                },
-                {
                     name: 'question',
                     value: 'question',
                     description: 'ask a question',
@@ -164,7 +163,6 @@ const init = async () => {
             const res = await applyTopicsToScenario(modelOptions.openai, history, answer)
             history = res.history
             content += `\n### Scenario #${scenarioCount}:\n` + res.content + '\n'
-            quizOneTopic
         } else if (answer === "quiz") {
             quizCount++
             const res = await quizOneTopic(modelOptions.openai, history)
@@ -177,24 +175,22 @@ const init = async () => {
             const res = await testAll(modelOptions.openai, history)
             history = res.history
             content += `\n### Test #${testCount}:\n` + res.content + '\n'
-        } else if (answer === "write") {
-            writeFileSync('response.md', content || "No content");
         }
         else if (answer === "question") {
-            const answer = await input({ message: "What is the question?" })
-            const res = await handleQuestion(modelOptions.openai, history, answer)
+            const question = await input({ message: "What is the question?" })
+            const res = await handleQuestion(modelOptions.openai, history, question)
             history = res.history
-            content += `\n### Question - ${answer}:\n` + res.content + '\n'
+            content += `\n### Question - ${question}:\n` + res.content + '\n'
         }
         else if (answer === "exit") {
-            writeFileSync('response.md', content || "No content");
             break;
         }
+        writeFileSync('response.md', content || "No content");
     }
 }
 
 const briefOverview = async (openai: OpenAIChatApi, topics: string) => {
-    const overview = "Give me a brief overview on these topics: " + topics
+    const overview = "Give me a brief overview on these topics: " + topics + '\n These topics and the material I am learning come from Speech and Language Processing (3rd ed. draft) by Dan Jurafsky and James H. Martin'
 
     try {
         const res = await openai.textCompletion(overview, { systemMessage: SYSTEM_MESSAGE });
@@ -218,8 +214,9 @@ const applyTopicsToScenario = async (openai: OpenAIChatApi, history: ChatRequest
 
 const quizOneTopic = async (openai: OpenAIChatApi, history: ChatRequestMessage[]) => {
     const answer = await input({ message: "What is the topic?" })
-    const prompt = "Write me a short 3 question, open ended quiz on the following topic. Answer in a way that helps me understand these topics and concepts better. Topic: " + answer
-    return await handleQuestion(openai, history, prompt)
+    const prompt = `Write me a short 3 question quiz on the following topic: ${answer}.  The questions should make me apply my knowledge to scenarios.`
+    const examples = "Here are some example questions:\n" + EXAMPLE_QUESTIONS.join('\n\n')
+    return await handleQuestion(openai, history, prompt + '\n\n' + examples)
 }
 
 const testAll = async (openai: OpenAIChatApi, history: ChatRequestMessage[]) => {

@@ -1,87 +1,132 @@
-Given the range of topics, there will be quite a lot to cover here. I'll try to summarize the key points, but this is really a broad overview so you may need to dive into specific areas in more depth. 
+That's quite a diversity of topics you're studying! Here's a brief overview:
 
-1. Finite State Text Processing involves the use of systems that process input strings based on a set of defined states and transitions. It is often applied in Natural Language Processing (NLP) for things like text normalization and spell checking. 
+1) Finite State Text Processing, Morphology, Pynini:
+Finite state machine is a model of computation with highly structured set of transitions between states. Used in text processing, finite state machines can parse, filter, and transform text data. Morphology, the study of words and how they're formed, often uses finite state machines. Pynini, conversely, is a Python library for creating finite state transducers.
 
-2. Morphology in linguistics is the study of words, their internal structure, and how they are formed. For example, 'jumping' is formed from 'jump' and 'ing'. 
+2) Text Normalization, Spelling:
+Text normalization involves transforming text into a consistent form - for example, lowercasing, stemming, or removing punctuation. Pynini can be used for this task. Spelling correction is another aspect of text normalization; it involves identifying and correcting spelling mistakes.
 
-3. Pynini is a Python library that compiles finite-state grammars written in a regular-expression-like syntax. 
+3) FSA, Reg Expressions, Conditional Prob., Bayes:
+FSA (Finite State Automata) and regular expressions are both tools for pattern matching. Conditional probability is a measure of the probability of an event given that another event has occurred. Bayes' theorem is a way to calculate conditional probabilities.
 
-4. FSA (Finite State Automata) and Regular Expressions are both used to recognize patterns in strings. These can be used in text normalization or spell-checking.
+4) Text Classification - Traditional Methods and Neural Methods:
+Traditional methods of text classification include techniques like Naive Bayes and Logistic Regression, which often use features derived from the word counts in the text. Neural methods for text classification, such as Multilayer Perceptrons (MLP) and Convolutional Neural Networks (CNN), can learn complex patterns and are more flexible.
 
-5. Conditional Probability and Bayes' theorem, are the backbone of probabilistic model verification in NLP, such as in spam filtering or document classification.
+5) Sequence Labeling:
+This involves predicting a label for each item in a sequence. Models like Hidden Markov Models, Recurrent Neural Networks (RNNs), and Long Short Term Memory (LSTM) Networks are common for this task. 
 
-6. Text Normalization is the process of transforming text into a canonical (standard) form. For example, converting numbers into words like '9' to 'nine'.
+6) Sequence-to-Sequence Models:
+These models involve mapping an input sequence to an output sequence. Encoder-Decoder models are common for tasks like machine translation, where an encoder reads the input sequence and a decoder generates the output. Attention mechanisms help the model focus on different parts of the input sequence.
 
-7. Language Models predict the next word in a sequence given the history of previous words. They can be Traditional (based on n-grams, smoothed or back-off models) or Neural (machine learning-based models capable of learning word dependencies).
+7) Transformers:
+A transformer is a type of model that uses self-attention mechanisms to capture dependencies between all words in the input sequence, regardless of their distance apart.
 
-8. Text Classification is the task of assigning predefined categories to a text. This can be done traditionally with methods like Naive Bayes and Logistic Regression, or more advanced methods like Feedforward Neural Networks, Multi-Layer Perceptron (MLP), and Convolutional Neural Networks (CNN).
+8) Pretrained Language Models:
+These models are trained on a large text corpus and can be fine-tuned for a variety of tasks. They capture a lot of language knowledge and can often greatly improve performance.
 
-9. Sequence Labeling is the task of predicting labels for each member of a sequence. Markov Models and Hidden Markov Models are often used for this. POS tagging and NER (Named Entity Recognition) are some applications.
+9) Syntax, Context-Free Grammars and Parsing:
+Syntax refers to the structure of sentences. Context-Free Grammars are a tool for describing the possible structures a sentence can have. Parsing is the process of taking a sentence and producing its structure according to a given grammar.
 
-10. Sequence-to-sequence models are deep learning models where both input and output are sequences. "Encoder-Decoder" and "Attention" models are examples of such models used for tasks like Machine Translation.
+10) Semantic Role Labeling, Lexical Semantics:
+Semantic role labeling involves identifying the semantic roles of different parts of the sentence. Lexical semantics looks at the meaning of words and their relations.
 
-11. Transformers are a specific type of model used in NLP notable for their self-attention mechanism which lets them consider different words in a sentence to establish context. 
+11) Topic Modeling:
+This involves uncovering the underlying topics in a set documents. Methods like Latent Dirichlet Allocation are common.
 
-12. Pretrained language models like BERT, GPT, or ELMo are general-purpose models trained over a large amount of unlabelled text data (like the entire internet). 
+12) Word Embeddings:
+Word embeddings are a way of representing words as dense vectors, capturing meaning based on the word's usage.
 
-13. Syntax, Context-Free Grammars, Parsing, Chunking, Treebanks, Sequence Modeling are all concerned with understanding the structure of language.
+13) Discourse and Coreference:
+Discourse deals with how language is used in conversation. Coreference resolution is about determining when two phrases in a text refer to the same entity.
 
-14. Semantics is the study of meaning. This can be broken down into lexical semantics (the meaning of individual words) and compositional semantics (how meanings combine).
+14) Summarization:
+Summarization involves taking a long document and reducing it to a shorter summary while retaining the main points.
 
-15. Semantic Role Labeling is a task in NLP which involves detecting the semantic relationships between entities in a sentence.
+Each of these topics can be applied in various scenarios depending on your use case. For example, FSA can be used for text search, spelling correction for text cleaning, Text classification for sentiment analysis or spam detection, Sequence labeling for part of speech tagging or named entity recognition, Syntax parsing for generating parse trees and understanding sentence structure etc.
 
-16. Topic Modeling is a type of statistical model for discovering abstract topics that occur in a collection of documents.
+### Quiz #1:
+Sure, here are three questions to help you better understand Chunking, Dependency Parsing, and Treebanks:
 
-17. Word embeddings translate words into vectors of real numbers so that the word's meaning can be understood by the machine. 
+1) What is chunking in Natural Language Processing, and provide an example of its application.
 
-18. Discourse and Coreference are about understanding the larger context of a conversation or a paragraph, and how different parts refer to each other.
+Answer: Chunking in NLP is a process of extracting phrases from unstructured text by grouping words into meaningful chunks. Instead of identifying individual words, chunking groups them based on their part of speech tags. For example, in the sentence "The quick brown fox jumps over the lazy dog”, a chunker could group "The quick brown fox" as a noun phrase and "over the lazy dog" as a prepositional phrase. A common application of chunking can be seen in information extraction tasks where it's used to identify named entities like persons, organizations, location, etc.
 
-19. Summarization is the task of making a shorter version of a document while keeping the main points. 
+2) Explain dependency parsing and its significance in understanding sentence structure.
 
-These concepts are all integral parts of NLP and computational linguistics, and they interact in many ways. They're used in various applications like machine translation, question answering systems, document or sentiment classification, information extraction and so forth.
+Answer: Dependency parsing is an approach to analyzing the grammatical structure of a sentence based on the dependencies between the words. Each word in the sentence has a dependency relation to another word, typically expressing relations like subject, object, or modifying relation. For example, in the sentence "Amy tossed the ball", "Amy" is the subject of the verb "tossed", and "the ball" is the object of the verb. This structure provides a more direct mapping between syntax and semantics of the sentence, leading to a better understanding of the sentence's meaning.
+
+3) What are Treebanks and how are they used in syntactic analysis of text?
+
+Answer: Treebanks are a type of linguistic database where sentences are annotated with syntax (and sometimes semantic) structure. Sometimes the syntactic structure is a tree, hence the name treebank. They are commonly used in the development and evaluation of parsing algorithms. For example, a statistical parser may be trained based on the patterns observed in a treebank. Additionally, treebanks can be used to compute statistics about language use, study linguistic phenomena, and as input for other NLP algorithms like machine translation systems. An example of a treebank is the Penn Treebank, which annotates the Wall Street Journal Corpus.
+
+
+### Question - Summarise this in bullet points: https://web.stanford.edu/~jurafsky/slp3/17.pdf:
+This document provides comprehensive material on the topic of Information Extraction (IE), Relation Extraction, and Sentiment Analysis. Here are the key takeaways in bullet points:
+
+Information Extraction:
+- Information Extraction is the process of automatically extracting structured information from unstructured data, like text.
+- It involves various tasks such as Named Entity Recognition, Coreference Resolution, and Relation Extraction.
+- Named Entity Recognition (NER) is the task of identifying proper names in text.
+- Coreference resolution is as the task of determining when two expressions in a text refer to the same entity.
+
+Relation Extraction:
+- Relation Extraction is the task of identifying and classifying semantic relationships between entities in text.
+- There are various approaches to relation extraction, including Rule-based, Supervised, Semi-supervised, and Unsupervised.
+- The main challenge of relation extraction is dealing with the vast variety of ways in which a particular relation can be expressed.
+
+Sentiment Analysis:
+- Sentiment Analysis is the field of study that analyzes people's opinions, sentiments, evaluations, appraisals, and emotions towards entities such as products, services, organizations, individuals, issues, events, and their attributes.
+- It includes tasks like identifying sentiment polarity, subjectivity, intensity, aspect-based sentiment analysis, and emotion detection.
+- It is widely applied in areas like business intelligence, social media monitoring, product analysis, and market research.
+
+Topic Detection:
+- Topic Detection is the task of automatically identifying the main themes that occur in a text.
+- It enables the analysis of large volumes of data, for example in document clustering, document summarization, or improving information retrieval.
+- Latent Dirichlet Allocation (LDA) is one of the most popular methods for Topic Detection.
+
+Event Extraction:
+- Event Extraction involves identifying instances of a specified type of event in text and determining the roles of entities in the event.
+- Events are generally represented as a structured frame or template, specifying the type of event and the roles of entities involved.
 
 ### Test #1:
-Sure, here are the questions:
+Here are some questions based on the material:
 
-1. A sentence reads "The dog chase the cat". Correct the sentence using Finite State Automata approach and explain how you did it.
+1) A company receives a tweet saying "I love your product #Blessed". What type of Information Extraction method would help identify the sentiment expressed in this tweet and what does it express? 
 
-2. Consider the word "unhappiness". Break it down into its morpheme components and explain the role of each morpheme.
+Answer: Sentiment Analysis would help identify the sentiment. This tweet expresses a positive sentiment.
 
-3. You are working with the Pynini library and are tasked to build a finite state grammar to recognize email addresses. Explain your approach on doing this.
+2) What type of NLP task would you use to correctly recognize "Apple" as a tech company rather than a fruit in the sentence "Apple has just launched a new product"?
 
-4. The probability of receiving a spam email is 30% and the probability of a spam email containing the word "prize" is 80%. If an email arrives with the word "prize", what is the conditional probability that this email is spam? Use the Bayes theorem.
+Answer: Named Entity Recognition would be used to identify "Apple" as a tech company.
 
-5. Given the sentence "it is rainng outside", you are tasked to normalize the text. Explain the steps and the final normalized text you'd get.
+3) In the sentence, "Julia passed the ball to Sarah. She scored a goal", what is the coreference in this sentence?
+ 
+Answer: The coreference in this sentence is "She" referring to "Sarah".
 
-6. You’re training a trigram language model and your corpus includes the sentence: “A beautiful, breezy day”. What would the sequences look like under the context of your model? 
+4) If you are given a large set of customer reviews about a product and you want to find out what specific features are being discussed, what NLP task would you apply?
 
-7. Your task is to classify tweets into either "positive", "negative", or "neutral". You have chosen to use a Feedforward Neural Network. Explain the features you would use and why.
+Answer: This can be achieved by Aspect-based Sentiment Analysis or Topic Detection.
 
-8. Given the sentence "I am a student from XYZ University", identify the entities in the sentence and label them using Named Entity Recognition.
+5) If you had to pick between a Count-Based Trigram Language Model and an RNN-based Language Model, which would be more capable of handling long-range dependencies in sentences, and why?
 
-9. Explain an instance where an "Encoder-Decoder" model in Sequence-to-Sequence models would be more effective than a "Attention" model and why.
+Answer: An RNN-based Language Model would be more capable of handling long-range dependencies because, unlike the Trigram Model that only considers the last two words, an RNN can consider all previous words in the sentence.
 
-10. You’re using the Transformer model for English to French translation. The sentence is “I am going to the market”. Explain the role played by self-attention in accurately translating this sentence.
+6) For the sentence "Bobby gave the book to Julie", what is the relation and the entities involved if we were doing relation extraction?
 
-### Question - Next time, include solutions:
-Of course, I apologize for that. Here are the solutions to the questions:
+Answer: The relation is 'gave' and the entities involved are 'Bobby' and 'Julie'.
 
-1. Using Finite State Automata, we consider the dictionary of known words and grammatical rules. As 'chase' is incorrect grammatically in this sentence, the model corrects it to 'chased' to form "The dog chased the cat".
+7) What is Treebank and how is it helpful in syntactic analysis of text?
 
-2. "Unhappiness" can be broken down into three morphemes: the prefix "un-", the root "happy", and the suffix "-ness". "Un-" is a morpheme that adds the meaning of negation, "happy" is the root word implying a feeling of joy, and "-ness" transforms an adjective into a noun, indicating a state or condition.
+Answer: A Treebank is a linguistic database where sentences are annotated with syntax and sometimes semantic structure. It is helpful in syntactic analysis as it helps in the development and evaluation of parsing algorithms.
 
-3. Building a finite-state grammar to recognize email addresses with Pynini would involve defining the structure of a typical email address (one or more alphanumeric characters, followed by "@", followed by one or more alphanumeric characters, then a period, then a domain).
+8) What type of language model - Count-Based Trigram, Neural Trigram, or RNN-Based model - would most likely give the sentence "The cat, that was very old and very wise, sat on the mat" the highest probability and why?
 
-4. Using Bayes' theorem, the conditional probability of an email being spam given it contains the word "prize" is: P(Spam | Prize) = [P(Prize | Spam) * P(Spam)] / P(Prize) = [0.80*0.30] / P(Prize) = 0.24 / P(Prize). You would need the probability of any email containing the word "prize" to get the exact answer.
+Answer: The RNN-Based model would be most likely to give this sentence the highest probability because it is capable of handling the long-range dependencies present in this sentence.
 
-5. Normalizing "it is rainng outside" would first involve correcting spelling to "it is raining outside". Further normalization might involve lowercasing (already done here) or removing punctuation (not applicable here). 
+9) In the sentence, "Paul gave the ball to Peter", if we run an event extraction, how would it present the resulting structure?
 
-6. In a trigram model, given the sentence “A beautiful, breezy day”, the sequences would be: [“<s>”, “a”, “beautiful”], [“a”, “beautiful”, “breezy”], [“beautiful”, “breezy”, “day”], [“breezy”, “day”, “</s>”], where "<s>" and "</s>" are special tokens indicating the start and end of the sentence.
+Answer: The event is 'gave', with 'Paul' as the giver, 'the ball' as the object being given, and 'Peter' as the receiver.
 
-7. For classifying tweets, features to use with a Feedforward Neural Network include word frequency counts, presence or absence of certain words, length of tweet, the sentiment score of the tweet (which can be calculated using a sentiment lexicon), and the use of hashtags, mentions, and emoticons.
+10) Given the set of sentences "I love the new Xbox. The graphics are mind-blowing and the controller feels great in the hands!", assuming you're using sentiment analysis, which aspects are being mentioned and what sentiment is being expressed about them?
 
-8. "I" would be the entity indicating the person making the statement, so it would be labeled as "PERSON". "XYZ University" would be labeled as "ORGANIZATION", as it's named entity representing an institution.
-
-9. An instance where an "Encoder-Decoder" model would be more effective than an "Attention" model is when translating a language with high word alignment like French to English. This is because the "Encoder-Decoder" model already has a good performance with high word alignment. However, for languages with lower word alignment, the "Attention" model would fare better as it allows the model to focus on specific parts of the input sequence.
-
-10. With the Transformer model, the sentence “I am going to the market” would be processed in parallel. The self-attention mechanism would create a weighted representation of each word in relation to all other words in the sentence, to capture the dependencies among the words, which helps produce a more accurate translation.
+Answer: The aspects being mentioned are the 'graphics' and the 'controller' of the new Xbox. The sentiment is positive for both aspects.
